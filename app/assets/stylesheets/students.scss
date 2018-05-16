@@ -1,3 +1,36 @@
 // Place all the styles related to the students controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.jumbotron{
+	background-color: black !important;
+	color: white !important;
+}
+
+.bootstrp-btn{
+	width: 400px;
+	margin: 30px 10px;
+}
+body{
+	background-color: black !important; 
+}
+
+.jumbotron{
+	padding: 0px 0px !important;
+}
+.mng-form{
+	margin: 100px 200px;
+}
+.mng-form label{
+	color: white;
+}
+td, th{
+	color: white !important	
+}
+.validation-error{
+	color: red;
+}
+.flash-msg{
+	margin-top: -21px !important;
+}

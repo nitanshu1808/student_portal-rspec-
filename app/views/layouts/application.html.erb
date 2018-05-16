@@ -4,12 +4,28 @@
     <title>StudentApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Student App</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="javascript:void(0)">Page 2</a></li>
+          <li><a href="javascript:void(0)">Page 3</a></li>
+        </ul>
+      </div>
+    </nav>
+    <% flash.each do |key, value| %>
+      <div class="<%= flash_class(key) %> text-center flash-msg">
+        <%= value %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

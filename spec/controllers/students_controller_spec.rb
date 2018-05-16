@@ -24,4 +24,11 @@ RSpec.describe StudentsController, type: :controller do
       expect(response.status).to eq(200)
     end
   end
+
+  context "Get #new" do
+    it "returns a success response " do
+      get :new
+      expect(response.status).to eq(200)
+    end
+  end
 end
