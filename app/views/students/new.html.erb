@@ -1,30 +1,35 @@
-<div class = "mng-form">
-	<%= form_for @student, url: {action: "create"} do |student| %>
-	  <div class="form-group">
-	  	<%= student.label :name %>
-	  	<%= student.text_field :name, class: 'form-control', placeholder: 'Enter Name', maxlength: 30, required: true %>
-	  </div>
-	  <div class="form-group">
-	  	<%= student.label :email %>
-	  	<%= student.email_field :email, class: 'form-control', placeholder: 'Enter Email', maxlength: 50, required: true %>
-	  </div>
-	  <div class="form-group">
-		  <%= student.label :age, 'Age' %>
-		  <%= student.select(:age, (18..30).to_a, {:include_blank => "Select Age"}, {:class => "form-control", required: true} ) %>
-		</div>
-		<div class="form-group">
-		  <%= student.label :college, 'College' %>
-		  <%= student.select(:college, Student::COLLEGES, {:include_blank => "Select College"}, {:class => "form-control", required: true} ) %>
-		</div>
-	  <div class="checkbox">
-	  	<%= student.label :doing_internship do %>
-	  		<%= student.check_box :doing_internship, class: 'intrnshp-chckbox' %> Doing Internship
-	    <% end %>
-	  </div>
-		<div class="form-group compny-name <%= "hide" unless student.object.doing_internship? %>">
-	  	<%= student.label :internship_company, 'Internship Company Name' %>
-	  	<%= student.text_field :internship_company, class: 'form-control', placeholder: 'Enter Internship Company Name', maxlength: 50%>
-	  </div>
-	  <%= student.submit "Submit", class: "btn btn-default" %>
-	<% end %>
+<div class = "container">
+  <div class="jumbotron text-center">
+    <h1>Create Student</h1>
+  </div>
+  <div class = "mng-form">
+    <%= form_for @student, url: {action: "create"} do |student| %>
+      <div class="form-group">
+        <%= student.label :name %>
+        <%= student.text_field :name, class: 'form-control', placeholder: 'Enter Name', maxlength: 30, required: true %>
+      </div>
+      <div class="form-group">
+        <%= student.label :email %>
+        <%= student.email_field :email, class: 'form-control', placeholder: 'Enter Email', maxlength: 50, required: true %>
+      </div>
+      <div class="form-group">
+        <%= student.label :age, 'Age' %>
+        <%= student.select(:age, (18..30).to_a, {:include_blank => "Select Age"}, {:class => "form-control", required: true} ) %>
+      </div>
+      <div class="form-group">
+        <%= student.label :college, 'College' %>
+        <%= student.select(:college, Student::COLLEGES, {:include_blank => "Select College"}, {:class => "form-control", required: true} ) %>
+      </div>
+      <div class="checkbox">
+        <%= student.label :doing_internship do %>
+          <%= student.check_box :doing_internship, class: 'intrnshp-chckbox' %> Doing Internship
+        <% end %>
+      </div>
+      <div class="form-group compny-name <%= "hide" unless student.object.doing_internship? %>">
+        <%= student.label :internship_company, 'Internship Company Name' %>
+        <%= student.text_field :internship_company, class: 'form-control', placeholder: 'Enter Internship Company Name', maxlength: 50%>
+      </div>
+      <%= student.submit "Submit", class: "btn btn-default" %>
+    <% end %>
+  </div>
 </div>
