@@ -14,6 +14,9 @@
 //= require activestorage
 //= require turbolinks
 
-
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
 //= require jquery-3.3.1.min
+//= require jquery.validate
 //= require_tree .

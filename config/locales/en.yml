@@ -6,6 +6,13 @@ en:
       valid_age:    "Age should be between 18 - 30."
       valid_intrnshp_compny: "Name of the internship company can't be blank"
       valid_college: "College should be either UCD || UCC || NUI Galway"
+      enter_val:    "Please enter a %{val}."
+      character_validation: "%{val} must be less than %{num} characters"
+      email:          "Email"
+      name:           "Name"
+      internship_company: "Internship company Name"
+      college:        "College"
+      age:            "Age"
   controllers:
     student:
       record_created: "Student Created Successfully"
