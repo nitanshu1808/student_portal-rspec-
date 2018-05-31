@@ -1,21 +1,21 @@
 <div class="container">
   <div class = "text-center">
     <div class="jumbotron text-center">
-      <h1>Welcome to Students App</h1>
+      <h1><%= I18n.t("views.student.welcome_msg") %></h1>
     </div>
-    <%= link_to "Show all students", "javascript:void(0)",class: "btn btn-primary bootstrp-btn", id: 'all-students' %>
-    <%= link_to "Create Student", new_student_path,class: "btn btn-success bootstrp-btn" %>
+    <%= link_to I18n.t("views.student.show_all"), "javascript:void(0)",class: "btn btn-primary bootstrp-btn", id: 'all-students' %>
+    <%= link_to I18n.t("views.student.create_student"), new_student_path,class: "btn btn-success bootstrp-btn" %>
   </div>
   <div class = "display_list"></div>
   <table class="table table-dark hide">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Age</th>
-        <th>College</th>
-        <th>Doing Intership</th>
-        <th>Intership Company Name</th>
+        <th><%= I18n.t("model.student.name") %></th>
+        <th><%= I18n.t("model.student.email") %></th>
+        <th><%= I18n.t("model.student.age") %></th>
+        <th><%= I18n.t("model.student.college") %></th>
+        <th><%= I18n.t("model.student.doing_internship") %></th>
+        <th><%= I18n.t("model.student.internship_company") %></th>
       </tr>
     </thead>
     <tbody>

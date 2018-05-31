@@ -13,6 +13,18 @@ en:
       internship_company: "Internship company Name"
       college:        "College"
       age:            "Age"
+      doing_internship: "Doing Intership"
   controllers:
     student:
       record_created: "Student Created Successfully"
+  views:
+    student:
+      welcome_msg: "Welcome to Students App"
+      show_all:    "Show all students"
+      create_student: "Create Student"
+      enter_name:     "Enter Name"
+      enter_email:    "Enter Email"
+      select_age:     "Select Age"
+      select_college: "Select College"
+      enter_internship: "Enter Internship Company Name"
+      submit:           "Submit"

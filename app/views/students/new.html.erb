@@ -5,31 +5,32 @@
   <div class = "mng-form">
     <%= form_for @student, url: {action: "create"} do |student| %>
       <div class="form-group">
-        <%= student.label :name %>
-        <%= student.text_field :name, class: 'form-control', placeholder: 'Enter Name', maxlength: 30, required: true %>
+        <%= student.label :name, I18n.t("model.student.name") %>
+        <%= student.text_field :name, class: 'form-control', placeholder: I18n.t("views.student.enter_name"), maxlength: 30, required: true %>
       </div>
       <div class="form-group">
-        <%= student.label :email %>
-        <%= student.email_field :email, class: 'form-control', placeholder: 'Enter Email', maxlength: 50, required: true %>
+        <%= student.label :email, I18n.t("model.student.email") %>
+        <%= student.email_field :email, class: 'form-control', placeholder: I18n.t("views.student.enter_email"), maxlength: 50, required: true %>
       </div>
       <div class="form-group">
-        <%= student.label :age, 'Age' %>
-        <%= student.select(:age, (18..30).to_a, {:include_blank => "Select Age"}, {:class => "form-control", required: true} ) %>
+        <%= student.label :age, I18n.t("model.student.age") %>
+        <%= student.select(:age, (18..30).to_a, {:include_blank => I18n.t("views.student.select_age")}, {:class => "form-control", required: true} ) %>
       </div>
       <div class="form-group">
-        <%= student.label :college, 'College' %>
-        <%= student.select(:college, Student::COLLEGES, {:include_blank => "Select College"}, {:class => "form-control", required: true} ) %>
+        <%= student.label :college, I18n.t("model.student.college") %>
+        <%= student.select(:college, Student::COLLEGES, {:include_blank => I18n.t("views.student.select_college")}, {:class => "form-control", required: true} ) %>
       </div>
       <div class="checkbox">
-        <%= student.label :doing_internship do %>
-          <%= student.check_box :doing_internship, class: 'intrnshp-chckbox' %> Doing Internship
+        <%= student.label :doing_internship, I18n.t("model.student.doing_internship")  do %>
+          <%= student.check_box :doing_internship, class: 'intrnshp-chckbox' %>
+          <%= I18n.t("model.student.doing_internship") %>
         <% end %>
       </div>
       <div class="form-group compny-name <%= "hide" unless student.object.doing_internship? %>">
-        <%= student.label :internship_company, 'Internship Company Name' %>
-        <%= student.text_field :internship_company, class: 'form-control', placeholder: 'Enter Internship Company Name', maxlength: 50%>
+        <%= student.label :internship_company, I18n.t("model.student.internship_company") %>
+        <%= student.text_field :internship_company, class: 'form-control', placeholder: I18n.t("views.student.enter_internship"), maxlength: 50%>
       </div>
-      <%= student.submit "Submit", class: "btn btn-default" %>
+      <%= student.submit I18n.t("views.student.submit"), class: "btn btn-default" %>
     <% end %>
   </div>
 </div>
