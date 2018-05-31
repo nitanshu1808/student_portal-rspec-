@@ -15,10 +15,6 @@ class StudentsController < ApplicationController
     end
   end
 
-  def show
-    @student = Student.find_by(id: params[:id])
-  end
-
   def all_students
     @students = Student.all
     render json: @students 

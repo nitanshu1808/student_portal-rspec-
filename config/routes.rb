@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
       root to: "students#index"
     end
-  resources :students
+  resources :students, only: [:index, :new, :create]
   root to:  'students#index'
   get 'all_students', to: 'students#all_students'
+
+  get '*path' => redirect('/')
 end
